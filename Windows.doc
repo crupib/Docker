@@ -1,0 +1,3 @@
+docker pull mcr.microsoft.com/powershell
+docker container run --rm -it mcr.microsoft.com/powershell pwsh
+
