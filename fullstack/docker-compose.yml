@@ -17,12 +17,12 @@ services:
     links:
       - app
   mongo:
-    container_name: mongo
+    container_name: mongodb
     image: mongo
     restart: always
     expose:
-      - "27017"
+      - "27018"
     volumes:
       - ./data:/data/db
     ports:
-      - "27017:27017"
+      - "27018:27017"
