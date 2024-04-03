@@ -11,7 +11,7 @@ route = "/hello"
 component = "hello-world"
 
 [component.hello-world]
-source = "hello_world.wasm"
+source = "target/wasm32-wasi/release/hello_world.wasm"
 allowed_outbound_hosts = []
 [component.hello-world.build]
 command = "cargo build --target wasm32-wasi --release"

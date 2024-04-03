@@ -8,6 +8,6 @@ fn handle_hello_world(req: Request) -> anyhow::Result<impl IntoResponse> {
     Ok(Response::builder()
         .status(200)
         .header("content-type", "text/plain")
-        .body("Docker loves Wasm")
+        .body("Hello, Cunt lapper")
         .build())
 }
