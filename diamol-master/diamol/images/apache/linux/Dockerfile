@@ -1,0 +1,2 @@
+ARG HTTPD_VERSION
+FROM httpd:${HTTPD_VERSION}-alpine

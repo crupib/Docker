@@ -1,0 +1,16 @@
+FROM diamol/dotnet-sdk:2e AS builder
+
+WORKDIR /src
+COPY src/Numbers.Api/Numbers.Api.csproj .
+RUN dotnet restore
+
+COPY src/Numbers.Api/ .
+RUN dotnet publish -c Release -o /out Numbers.Api.csproj
+
+# app image
+FROM diamol/dotnet-aspnet:2e
+
+ENTRYPOINT ["dotnet", "/app/Numbers.Api.dll"]
+
+WORKDIR /app
+COPY --from=builder /out/ .

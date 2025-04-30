@@ -1,0 +1,9 @@
+FROM mcr.microsoft.com/windows/servercore:ltsc2025 AS install
+SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+RUN Invoke-WebRequest -UseBasicParsing https://chocolatey.org/install.ps1 | Invoke-Expression
+RUN choco install -y docker-cli
+
+FROM diamol/base:2e
+ENV DOCKER_PATH="C:\\Program Files\\docker"
+RUN setx /M PATH "%PATH%;%DOCKER_PATH%;"
+COPY --from=install C:\\ProgramData\\chocolatey\\bin\\docker.exe ${DOCKER_PATH}\\docker.exe

@@ -1,0 +1,118 @@
+services:
+  base:
+    build:
+      context: ../images/base/linux
+      args:
+        ALPINE_VERSION: ${ALPINE_VERSION}
+
+  node:
+    build:
+      context: ../images/node/linux
+
+  apache:
+    build:
+      context: ../images/apache/linux
+
+  maven:
+    build:
+      context: ../images/maven/linux
+
+  openjdk:
+    build:
+      context: ../images/openjdk/linux
+
+  openjdk-jre:
+    build:
+      context: ../images/openjdk/jre/linux
+
+  golang:
+    build:
+      context: ../images/golang/linux
+
+  dotnet-runtime:
+    build:
+      context: ../images/dotnet/runtime/linux
+
+  dotnet-sdk:
+    build:
+      context: ../images/dotnet/sdk/linux
+
+  dotnet-aspnet:
+    build:
+      context: ../images/dotnet/aspnet/linux
+
+  postgres-12:
+    build:
+      context: ../images/postgres/linux
+
+  postgres-13:
+    build:
+      context: ../images/postgres/linux
+
+  prometheus:
+    build:
+      context: ../images/prometheus/linux
+
+  grafana:
+    build:
+      context: ../images/grafana/linux
+
+  gogs:
+    build:
+      context: ../images/gogs/linux
+
+  jenkins:
+    build:
+      context: ../images/jenkins/linux
+      args:
+        JENKINS_JDK_VERSION: ${JENKINS_JDK_VERSION}
+
+  mssql:
+    build:
+      context: ../images/mssql/linux
+      args:
+        ALPINE_VERSION: ${ALPINE_VERSION}
+        MSSQL_VERSION: ${MSSQL_VERSION}
+        SQLPACKAGE_DOWNLOAD_URL: ${SQLPACKAGE_LINUX_DOWNLOAD_URL}
+
+  trivy:
+    build:
+      context: ../images/trivy/linux
+
+  fluentd:
+    build:
+      context: ../images/fluentd/linux
+      args:
+        DOCKER_BUILD_CPU: ${DOCKER_BUILD_CPU}
+
+  elasticsearch:
+    build:
+      context: ../images/elasticsearch/linux
+      args:
+        DOCKER_BUILD_CPU_ALT: ${DOCKER_BUILD_CPU_ALT}
+
+  kibana:
+    build:
+      context: ../images/kibana/linux
+      args:
+        DOCKER_BUILD_CPU_ALT: ${DOCKER_BUILD_CPU_ALT}
+
+  nginx:
+    build:
+      context: ../images/nginx/linux
+
+  cert-generator:
+    build:
+      context: ../images/cert-generator/linux
+
+  traefik:
+    build:
+      context: ../images/traefik/linux
+
+  redis:
+    build:
+      context: ../images/redis/linux
+
+  nats:
+    build:
+      context: ../images/nats/linux

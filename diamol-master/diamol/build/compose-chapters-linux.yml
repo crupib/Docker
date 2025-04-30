@@ -1,0 +1,8 @@
+services:
+  ch06-random-number:
+    build:
+      context: ../ch06/exercises/random-number/linux
+
+  ch19-timecheck-3:
+    build:
+      target: linux

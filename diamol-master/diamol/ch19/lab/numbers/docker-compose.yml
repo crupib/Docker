@@ -1,0 +1,17 @@
+services:
+  numbers-api:
+    image: diamol/ch08-numbers-api:2e-v3
+    environment:
+      - Logging__LogLevel__Default=Debug
+    networks:
+      - app-net
+
+  numbers-web:
+    image: diamol/ch08-numbers-web:2e-v3
+    ports:
+      - 8090:8080
+    networks:
+      - app-net
+
+networks:
+  app-net:

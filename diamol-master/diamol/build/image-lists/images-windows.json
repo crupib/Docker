@@ -1,0 +1,7 @@
+[
+  "prometheus",
+  "grafana",
+  "gogs",
+  "jenkins",
+  "trivy"
+]

@@ -1,0 +1,12 @@
+services:
+  numbers-api:
+    image: diamol/ch08-numbers-api:2e-v3
+    environment:
+      - App__BreakAfterCallCount=3
+    networks:
+      - ch20
+
+networks:
+  ch20:
+    name: ch20
+    external: true

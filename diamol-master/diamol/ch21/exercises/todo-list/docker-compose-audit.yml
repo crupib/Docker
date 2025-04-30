@@ -1,0 +1,5 @@
+services:
+  audit-handler:
+    image: diamol/ch21-audit-handler:2e
+    networks:
+      - app-net

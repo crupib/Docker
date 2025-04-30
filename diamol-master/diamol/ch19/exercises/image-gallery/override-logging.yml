@@ -1,0 +1,5 @@
+services:
+  iotd:
+    environment:
+      IOTD_LOGGING_LEVEL_ROOT: WARN
+      IOTD_LOGGING_LEVEL_IOTD: DEBUG

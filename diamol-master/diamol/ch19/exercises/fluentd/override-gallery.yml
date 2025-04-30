@@ -1,0 +1,4 @@
+services:
+  fluentd:
+    environment:
+      FLUENTD_CONF: elasticsearch-gallery.conf
